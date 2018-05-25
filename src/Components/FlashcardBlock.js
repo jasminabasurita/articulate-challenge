@@ -13,6 +13,7 @@ class FlashcardBlock extends Component {
   componentDidMount() {
     axios
       .get("/api/flashcards.json")
+      .then(res => res.data)
       .then(flashcards => this.setState({ flashcards }))
   }
   render() {

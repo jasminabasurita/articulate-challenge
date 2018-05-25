@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import axios from "axios"
 import Flashcard from "./Flashcard"
+import "./FlashcardBlock.css"
 
 class FlashcardBlock extends Component {
   constructor(props) {

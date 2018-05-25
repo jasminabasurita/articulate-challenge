@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+.card {
+  margin: 2em 0;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4), 0 0 6px rgba(0, 0, 0, 0.2);
+}
+.card,
+.side,
+.card-image {
+  width: 15em;
+  height: 15em;
+  transform-style: preserve-3d;
+  transition: all 1s ease-in-out;
+}
+.area {
+  margin: 1em 0.1em;
+}
+
+.side {
+  position: absolute;
+  background: white;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.side h2 {
+  color: gray;
+}
+
+.back {
+  z-index: 2;
+  border-top: 2px solid rgba(0, 0, 0, 0.6);
+}
+.front {
+  z-index: 1;
+  transform: rotateY(180deg);
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}

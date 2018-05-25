@@ -22,6 +22,7 @@ class Flashcard extends Component {
       <div onClick={this.handleClick} className={`card ${this.state.flipped}`}>
         <div className="back side">
           <h2>{props.content.back}</h2>
+          <i className="fas fa-sync fa-sm" />
         </div>
         <div className="front side">
           {!!props.content.image && (
@@ -45,6 +46,7 @@ class Flashcard extends Component {
               <div>{props.content.text}</div>
             </ScrollArea>
           )}
+          <i className="fas fa-sync fa-sm" />
         </div>
       </div>
     )

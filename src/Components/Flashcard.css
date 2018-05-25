@@ -42,3 +42,9 @@
 .flipped {
   transform: rotateY(180deg);
 }
+.fas {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  color: grey;
+}

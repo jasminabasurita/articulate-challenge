@@ -3,31 +3,17 @@ import axios from "axios"
 import Flashcard from "./Flashcard"
 import "./FlashcardBlock.css"
 
-class FlashcardBlock extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      flashcards: []
-    }
-  }
-
-  componentDidMount() {
-    axios
-      .get("/api/flashcards.json")
-      .then(res => res.data)
-      .then(flashcards => this.setState({ flashcards }))
-      .catch(err => console.error(err))
-  }
-  render() {
-    return (
-      <div className="flashcard-block">
-        {!!this.state.flashcards.length &&
-          this.state.flashcards.map(flashcard => (
-            <Flashcard key={flashcard.id} content={flashcard} />
-          ))}
-      </div>
-    )
-  }
-}
+const FlashcardBlock = ({ themeColor, flashcards }) => (
+  <div className="flashcard-block">
+    {!!flashcards.length &&
+      flashcards.map(flashcard => (
+        <Flashcard
+          key={flashcard.id}
+          themeColor={themeColor}
+          content={flashcard}
+        />
+      ))}
+  </div>
+)
 
 export default FlashcardBlock

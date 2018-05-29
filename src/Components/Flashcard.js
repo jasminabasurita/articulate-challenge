@@ -10,17 +10,23 @@ class Flashcard extends Component {
     }
   }
   handleClick = () => {
-    let flipped = "flipped"
-    if (this.state.flipped) {
-      flipped = ""
-    }
+    const flipped = this.state.flipped ? "" : "flipped"
     this.setState({ flipped })
+    // let flipped = "flipped"
+    // if (this.state.flipped) {
+    //   flipped = ""
+    // }
   }
   render() {
     const { props } = this
     return (
       <div onClick={this.handleClick} className={`card ${this.state.flipped}`}>
-        <div className="back side">
+        <div
+          className="back side"
+          style={{
+            borderTop: `2px solid ${props.themeColor}`
+          }}
+        >
           <h2>{props.content.back}</h2>
           <i className="fas fa-sync fa-sm" />
         </div>

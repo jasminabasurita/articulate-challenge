@@ -16,6 +16,7 @@ class FlashcardBlock extends Component {
       .get("/api/flashcards.json")
       .then(res => res.data)
       .then(flashcards => this.setState({ flashcards }))
+      .catch(err => console.error(err))
   }
   render() {
     return (
